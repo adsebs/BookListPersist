@@ -2,7 +2,10 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import { useCounterStore } from '@/stores/counter'
-const store = useCounterStore()
+
+// const store = useCounterStore()
+
+let counter = useCounterStore()
 </script>
 
 <template>
@@ -16,8 +19,13 @@ const store = useCounterStore()
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
-      store: {{ store }}
-      doublecount: {{ store.doubleCount }}
+      <!-- store: {{ store }} -->
+      <!-- doublecount: {{ store.doubleCount }} &nbsp -->
+      <div>
+      <p>{{ counter.count }} <button @click="counter.increment">Increment</button></p>
+      <p>{{ counter.name }}</p>
+      <p v-for="item in counter.formats">{{ item }}</p>
+      </div>
     </div>
   </header>
 
