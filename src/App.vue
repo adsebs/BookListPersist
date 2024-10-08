@@ -10,88 +10,62 @@ let counter = useCounterStore()
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-      <!-- store: {{ store }} -->
-      <!-- doublecount: {{ store.doubleCount }} &nbsp -->
-      <div>
+      <nav class="navbar navbar-expand-sm bg-light">
+
+        <div class="container-fluid">
+          <!-- Links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <h5>Book List 2.0</h5>
+            </li>
+            <li class="nav-item">
+              <RouterLink class="nav-link" to="/">Home</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink class="nav-link" to="/list">List</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink class="nav-link" to="/settings">Settings</RouterLink>
+            </li>
+          </ul>
+        </div>
+
+        </nav>
+
+
+
+        <!--
       <p>{{ counter.count }} <button @click="counter.increment">Increment</button></p>
       <p>{{ counter.name }}</p>
       <p v-for="item in counter.formats">{{ item }}</p>
-      </div>
+      -->
+
+
+
     </div>
   </header>
 
-  <RouterView />
+  <div class="container-fluid">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.container {
+  padding-top: 20px;
 }
 
 nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  padding-left: 16px;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+h5 {
+  padding-top: 8px;
+  padding-right: 14px;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>
