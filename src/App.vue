@@ -57,6 +57,7 @@ let counter = useCounterStore()
 
 .container {
   padding-top: 20px;
+  min-width: 90%;
 }
 
 nav {

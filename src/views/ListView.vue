@@ -1,8 +1,7 @@
 <script setup>
 
-import { useInputStore } from '@/stores/InputData'
-
-let input = useInputStore()
+import BookTable from '../components/BookTable.vue';
+import TestAccordion from '../components/TestAccordion.vue';
 
 </script>
 
@@ -10,7 +9,8 @@ let input = useInputStore()
 
     <div class="container content">
 
-        <p>List view!</p>
+
+        <BookTable />
         
     </div>
 

@@ -9,69 +9,96 @@ let input = useInputStore()
 
 <template>
 
-    <div class="card">
-        <div class="card-title">
-            <h4>Formats</h4>
+    <div class="row">
+
+        <div class="col-sm-4">
+            <div class="card">
+                    <div class="card-title">
+                        <h4>Formats</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li v-for="format in input.formats">
+                                {{ format }}
+                            </li>
+                            <li>
+                                <!-- Add input functionality -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
         </div>
-        <div class="card-body">
-            <ul>
-                <li v-for="format in input.formats">
-                    {{ format }}
-                </li>
-                <li>
-                    <!-- Add input functionality -->
-                </li>
-            </ul>
+        <div class="col-sm-4">
+            <div class="card">
+                    <div class="card-title">
+                        <h4>Genders</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li v-for="gender in input.genders">
+                                {{ gender }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
         </div>
+        <div class="col-sm-4">
+            <div class="card">
+                    <div class="card-title">
+                        Countries
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li v-for="country in input.countries">
+                                {{ country }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+
     </div>
-    <div class="card">
-        <div class="card-title">
-            <h4>Genders</h4>
+    <div class="row">
+
+        <div class="col-sm-4">
+            <div class="card">
+                    <div class="card-title">
+                        Age Ranges
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li v-for="age in input.ages">
+                                {{ age }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
         </div>
-        <div class="card-body">
-            <ul>
-                <li v-for="gender in input.genders">
-                    {{ gender }}
-                </li>
-            </ul>
+        <div class="col-sm-4">
+            <div class="card">
+                    <div class="card-title">
+                        Genres
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li v-for="genre in input.genres">
+                                {{ genre }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
         </div>
+        <div class="col-sm-4">
+
+        </div>
+
     </div>
-    <div class="card">
-        <div class="card-title">
-            Countries
-        </div>
-        <div class="card-body">
-            <ul>
-                <li v-for="country in input.countries">
-                    {{ country }}
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-title">
-            Age Ranges
-        </div>
-        <div class="card-body">
-            <ul>
-                <li v-for="age in input.ages">
-                    {{ age }}
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-title">
-            Genres
-        </div>
-        <div class="card-body">
-            <ul>
-                <li v-for="genre in input.genres">
-                    {{ genre }}
-                </li>
-            </ul>
-        </div>
-    </div>
+
+    
+    
+    
+    
+    
 
 </template>
 
@@ -83,10 +110,7 @@ let input = useInputStore()
     }
 
     .card {
-        width: 32%;
-        float: left;
-        margin-right: 1%;
-        margin-bottom: 1%;
+        margin-bottom: 10px;
     }
 
     .card-body {
