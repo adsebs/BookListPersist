@@ -68,14 +68,54 @@ import { defineStore } from 'pinia'
         { status: 'tbr', title: 'To Be Read', headings: { h0: 'Title', h1: 'Author', h2: 'Genre', h3: 'Age', h4: 'Format', h5: 'Pages', h6: 'Author Country', h7: 'Author Gender', h8: 'Publication Year', h9: 'Publisher', h10: 'Collection', h11: '' } },
         { status: 'reading', title: 'Currently Reading', headings: { h0: 'Title', h1: 'Author', h2: 'Genre', h3: 'Age', h4: 'Format', h5: 'Pages', h6: 'Author Country', h7: 'Author Gender', h8: 'Publication Year', h9: 'Publisher', h10: 'Collection', h11: 'Date Started', h12: '' } },
         { status: 'read', title: 'Read', headings: { h0: 'Title', h1: 'Author', h2: 'Genre', h3: 'Age', h4: 'Format', h5: 'Pages', h6: 'Author Country', h7: 'Author Gender', h8: 'Publication Year', h9: 'Publisher', h10: 'Collection', h11: 'Date Started', h12: 'Date Finished', h13: 'Rating', h14: 'Review', h15: '' } },
-    ]
+    ],
+
+    //form entry holders
+    newId: '',
+    newStatus: '',
+    newCollection: '',
+    newTitle: '',
+    newAuthor: '',
+    newGender: '',
+    newCountry: '',
+    newAge: '',
+    newPrimGenr: '',
+    newSecoGenr: '',
+    newPages: '',
+    newYear: '',
+    newPubl: '',
+    newFormat: '',
+    newDateStar: ''
+    
 
   }),
    getters: {
 
    },
+   //methods
    actions: {
+    add() {
+        this.books.push({
+            id: this.newId,
+            status: this.newStatus,
+            collection: this.newCollection,
+            title: this.newTitle,
+            author: this.newAuthor,
+            authGend: this.newGender,
+            authCoun: this.newCountry,
+            age: this.newAge,
+            primGenr: this.newPrimGenr,
+            secoGenr: this.newSecoGenr,
+            pages: this.newPages,
+            publYear: this.newYear,
+            publisher: this.newPubl,
+            format: this.newFormat,
+            dateStar: this.newDateStar
+            
+            
 
+        })
+    }
    }
  })
 

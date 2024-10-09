@@ -10,7 +10,6 @@ let book = useBookStore()
 
 <template> <!-- for "TBR" -->
 
-<button class="btn btn-primary">Add <i class="bi bi-bookmark-plus"></i></button>
 
 <div id="accordion">
 
@@ -32,7 +31,7 @@ let book = useBookStore()
         </thead>
         <tbody>
             <template v-for="book in book.books">
-                <tr  v-if="book.status === item.status">
+                <tr  v-if="book.status == item.status">
                     <td>{{ book.title }}</td>
                     <td>{{ book.author }}</td>
                     <td>{{ book.primGenr }}<template v-if="book.secoGenr !== ''">, {{ book.secoGenr }}</template></td>
@@ -46,10 +45,10 @@ let book = useBookStore()
                     <td>
                         <input class="form-check-input" type="checkbox" v-model="book.collection" disabled>
                     </td>
-                    <template v-if="item.status !== 'tbr'">
+                    <template v-if="item.status != 'tbr'">
                         <td >{{ book.dateStar }}</td>
                     </template>
-                    <template v-if="item.status === 'read'">
+                    <template v-if="item.status == 'read'">
                         <td>{{ book.dateFini }}</td>
                         <td>{{ book.rating }}</td>
                         <td><a href="#">Read</a></td>
@@ -64,6 +63,9 @@ let book = useBookStore()
 </div>
 
 </div>
+
+
+
 </template>
 
 

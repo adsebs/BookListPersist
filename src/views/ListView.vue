@@ -1,7 +1,7 @@
 <script setup>
 
-import BookTable from '../components/BookTable.vue';
-import TestAccordion from '../components/TestAccordion.vue';
+import BookTable from '../components/BookTable.vue'
+import AddBook from '../components/AddBook.vue'
 
 </script>
 
@@ -9,7 +9,9 @@ import TestAccordion from '../components/TestAccordion.vue';
 
     <div class="container content">
 
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBookForm">Add <i class="bi bi-bookmark-plus"></i></button>
 
+        <AddBook />
         <BookTable />
         
     </div>
