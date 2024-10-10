@@ -7,7 +7,7 @@ import { defineStore } from 'pinia'
     books: [
         { id: '0', status: 'reading', collection: true, title: 'Making It So', author: 'Patrick Stewart', authGend: 'Male', authCoun: 'UK', age: 'Adult', primGenr: 'Memoir', secoGenr: '', pages: 443, publYear: 2023, publisher: 'Simon & Schuster', format: 'Hardback', dateStar: '2023-10-18', dateFini: '', rating: '', review: '' },
 
-        { id: '1', status: 'reading', collection: false, title: 'In a Glass Darkly', author: 'Sheridan Le Fanu', authGend: 'Male', authCoun: 'Ireland', age: 'Adult', primGenr: 'gothic', secoGenr: 'Horror', pages: 384, publYear: 1872, publisher: 'Oxford University Press', format: 'Paperback', dateStar: '2024-03-17', dateFini: '', rating: '', review: '' },
+        { id: '1', status: 'reading', collection: false, title: 'Inheritance', author: 'Christopher Paolini', authGend: 'Male', authCoun: 'USA', age: 'YA', primGenr: 'Fantasy', secoGenr: 'Coming of Age', pages: 849, publYear: 2011, publisher: 'Penguin', format: 'Audiobook', dateStar: '2024-10-06', dateFini: '', rating: '', review: '' },
 
         { id: '2', status: 'reading', collection: true, title: 'Blood Scion', author: 'Deborah Falaye', authGend: 'Female', authCoun: 'Canada', age: 'YA', primGenr: 'Fantasy', secoGenr: '', pages: 415, publYear: 2023, publisher: 'Harper Collins', format: 'hardback', dateStar: '2024-08-12', dateFini: '', rating: '', review: '' },
 
@@ -87,7 +87,7 @@ import { defineStore } from 'pinia'
     newFormat: '',
     newDateStar: '',
 
-    chosen_book: '',
+    chosenbook: '',
     
 
   }),

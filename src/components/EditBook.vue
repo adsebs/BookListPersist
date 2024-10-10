@@ -11,7 +11,7 @@ let book = useBookStore();
 
 <template>
 
-<p>Chosen: {{ idValue }}</p>
+<p>Chosen: {{  }}</p>
     
 </template>
 

@@ -13,6 +13,8 @@ import AddBook from '../components/AddBook.vue'
 
         
         <BookTable />
+
+        
         <AddBook />
         
     </div>

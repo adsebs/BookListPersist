@@ -6,14 +6,23 @@ let book = useBookStore()
 
 // import EditBook from '../components/EditBook.vue'
 
+let chosenbook = "default title"
+
 </script>
 
 <template> 
 
-<p>Chosen: {{ book.chosen_book }}</p>
+<!-- <ChildComponent :title="chosenbook" /> -->
+
+<p>{{ chosenbook }}</p>
 
 <div id="accordion">
 
+<<<<<<< Updated upstream
+=======
+    <!-- <ChildComponent :title="sendtitle" /> -->
+
+>>>>>>> Stashed changes
 <div v-for="item in book.tblCols" class="card">
   <div class="card-header">
     <a class="btn" data-bs-toggle="collapse" :href="'#'+item.status">
@@ -55,9 +64,12 @@ let book = useBookStore()
                         <td><a href="#">Read</a></td>
                     </template>
                     <td>
-                        <form @submit.prevent="chosen_book = idValue">
-                        <button type="submit" class="btn-primary" id="btn-edit"><i class="bi bi-pencil"></i></button>
-                        </form>
+                        
+                    <form @submit.prevent="chosenbook = book.id">
+                        <button type="submit" class="btn btn-primary" id="btn-edit"><i class="bi bi-pencil"></i></button>
+                    </form>
+
+                        
                         <!-- <button class="btn-primary" id="btn-edit" data-bs-toggle="modal" data-bs-target="#editBookForm"><i class="bi bi-pencil"></i></button> -->
                     </td>
                 </tr>
