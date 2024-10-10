@@ -85,10 +85,13 @@ import { defineStore } from 'pinia'
     newYear: '',
     newPubl: '',
     newFormat: '',
-    newDateStar: ''
+    newDateStar: '',
+
+    chosen_book: '',
     
 
   }),
+  //computed
    getters: {
 
    },
@@ -115,7 +118,12 @@ import { defineStore } from 'pinia'
             
 
         })
+    },
+
+    choose() {
+        
     }
+
    }
  })
 

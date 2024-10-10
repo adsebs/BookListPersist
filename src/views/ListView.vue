@@ -11,8 +11,9 @@ import AddBook from '../components/AddBook.vue'
 
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBookForm">Add <i class="bi bi-bookmark-plus"></i></button>
 
-        <AddBook />
+        
         <BookTable />
+        <AddBook />
         
     </div>
 

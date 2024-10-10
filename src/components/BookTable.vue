@@ -4,12 +4,13 @@ import { useBookStore } from '@/stores/BookData';
 
 let book = useBookStore()
 
-
+// import EditBook from '../components/EditBook.vue'
 
 </script>
 
-<template> <!-- for "TBR" -->
+<template> 
 
+<p>Chosen: {{ book.chosen_book }}</p>
 
 <div id="accordion">
 
@@ -30,7 +31,7 @@ let book = useBookStore()
             </tr>
         </thead>
         <tbody>
-            <template v-for="book in book.books">
+            <template v-for="book in book.books" :key="book.id">
                 <tr  v-if="book.status == item.status">
                     <td>{{ book.title }}</td>
                     <td>{{ book.author }}</td>
@@ -53,7 +54,12 @@ let book = useBookStore()
                         <td>{{ book.rating }}</td>
                         <td><a href="#">Read</a></td>
                     </template>
-                    <td><a href="#"><i class="bi bi-pencil"></i></a></td>
+                    <td>
+                        <form @submit.prevent="chosen_book = idValue">
+                        <button type="submit" class="btn-primary" id="btn-edit"><i class="bi bi-pencil"></i></button>
+                        </form>
+                        <!-- <button class="btn-primary" id="btn-edit" data-bs-toggle="modal" data-bs-target="#editBookForm"><i class="bi bi-pencil"></i></button> -->
+                    </td>
                 </tr>
             </template>
         </tbody>
@@ -63,8 +69,6 @@ let book = useBookStore()
 </div>
 
 </div>
-
-
 
 </template>
 
@@ -88,6 +92,15 @@ let book = useBookStore()
         margin-bottom: 10px;
         border-radius: 0px!important;
         font-size: 13.5pt!important;
+    }
+
+    #btn-edit {
+        font-size: 12pt;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin: 0;
     }
 
 </style>
