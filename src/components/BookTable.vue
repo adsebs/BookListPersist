@@ -1,6 +1,8 @@
+
 <script setup>
 
 import { useBookStore } from '@/stores/BookData';
+import ChildComponent from './ChildComponent.vue'
 
 let book = useBookStore()
 
@@ -13,7 +15,8 @@ let book = useBookStore()
 <p>Chosen: {{ book.chosen_book }}</p>
 
 <div id="accordion">
-
+    <h1>Here is a child component!</h1>
+    <ChildComponent title="My journey with Vue" />
 <div v-for="item in book.tblCols" class="card">
   <div class="card-header">
     <a class="btn" data-bs-toggle="collapse" :href="'#'+item.status">
