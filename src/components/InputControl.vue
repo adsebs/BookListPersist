@@ -9,17 +9,17 @@ let input = useInputStore()
 
 <template>
 
-    <div class="row">
-
-        <div class="col-sm-4">
+<div class="row">
+    <template v-for="type in input.inputs">
+        <div v-if="type.type != 'Statuses'" class="col-4">
             <div class="card">
                     <div class="card-title">
-                        <h4>Formats</h4>
+                        <h4>{{ type.type }}</h4>
                     </div>
                     <div class="card-body">
                         <ul>
-                            <li v-for="format in input.formats">
-                                {{ format }}
+                            <li v-for="option in type.options">
+                                {{ option }}
                             </li>
                             <li>
                                 <form @submit.prevent="input.addFormat">
@@ -137,7 +137,9 @@ let input = useInputStore()
     }
 
     .card {
+        width: 100%;
         margin-bottom: 10px;
+        float: left;
     }
 
     .card-body {

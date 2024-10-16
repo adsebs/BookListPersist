@@ -11,6 +11,8 @@ let thisTitle= "Default Title"
 
 // import EditBook from '../components/EditBook.vue'
 
+let chosenbook = "default title"
+
 </script>
 
 <template> 
