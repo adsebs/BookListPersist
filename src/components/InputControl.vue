@@ -22,7 +22,10 @@ let input = useInputStore()
                                 {{ format }}
                             </li>
                             <li>
-                                <!-- Add input functionality -->
+                                <form @submit.prevent="input.addFormat">
+                                    <input v-model="input.newFormat" type="text">
+                                    <button class="btn btn-primary btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
+                                </form>
                             </li>
                         </ul>
                     </div>
@@ -38,6 +41,12 @@ let input = useInputStore()
                             <li v-for="gender in input.genders">
                                 {{ gender }}
                             </li>
+                            <li>
+                                <form @submit.prevent="input.addGender">
+                                    <input v-model="input.newGender" type="text">
+                                    <button class="btn btn-primary btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
+                                </form>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -51,6 +60,12 @@ let input = useInputStore()
                         <ul>
                             <li v-for="country in input.countries">
                                 {{ country }}
+                            </li>
+                            <li>
+                                <form @submit.prevent="input.addCountry">
+                                    <input v-model="input.newCountry" type="text">
+                                    <button class="btn btn-primary btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
+                                </form>
                             </li>
                         </ul>
                     </div>
@@ -70,6 +85,12 @@ let input = useInputStore()
                             <li v-for="age in input.ages">
                                 {{ age }}
                             </li>
+                            <li>
+                                <form @submit.prevent="input.addAge">
+                                    <input v-model="input.newAge" type="text">
+                                    <button class="btn btn-primary btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
+                                </form>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -83,6 +104,12 @@ let input = useInputStore()
                         <ul>
                             <li v-for="genre in input.genres">
                                 {{ genre }}
+                            </li>
+                            <li>
+                                <form @submit.prevent="input.addGenre">
+                                    <input v-model="input.newGenre" type="text">
+                                    <button class="btn btn-primary btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
+                                </form>
                             </li>
                         </ul>
                     </div>
@@ -115,6 +142,20 @@ let input = useInputStore()
 
     .card-body {
         padding-top: 0;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    .btn-add-input {
+        margin-left: 4px;
+        font-size: 12pt;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 0;
     }
 
 </style>

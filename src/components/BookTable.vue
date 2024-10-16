@@ -2,9 +2,12 @@
 <script setup>
 
 import { useBookStore } from '@/stores/BookData';
-import ChildComponent from './ChildComponent.vue'
+import EditBook from './EditBook.vue'
 
 let book = useBookStore()
+
+let thisId = "book0"
+let thisTitle= "Default Title"
 
 // import EditBook from '../components/EditBook.vue'
 
@@ -12,11 +15,9 @@ let book = useBookStore()
 
 <template> 
 
-<p>Chosen: {{ book.chosen_book }}</p>
 
 <div id="accordion">
-    <h1>Here is a child component!</h1>
-    <ChildComponent title="My journey with Vue" />
+
 <div v-for="item in book.tblCols" class="card">
   <div class="card-header">
     <a class="btn" data-bs-toggle="collapse" :href="'#'+item.status">
@@ -31,10 +32,13 @@ let book = useBookStore()
                 <th v-for="heading in item.headings">
                     {{ heading }}
                 </th>
+                <th>&nbsp</th>
             </tr>
         </thead>
         <tbody>
-            <template v-for="book in book.books" :key="book.id">
+            <template v-for="book in book.books" :key=book.id>
+
+
                 <tr  v-if="book.status == item.status">
                     <td>{{ book.title }}</td>
                     <td>{{ book.author }}</td>
@@ -57,13 +61,14 @@ let book = useBookStore()
                         <td>{{ book.rating }}</td>
                         <td><a href="#">Read</a></td>
                     </template>
+
                     <td>
-                        <form @submit.prevent="chosen_book = idValue">
-                        <button type="submit" class="btn-primary" id="btn-edit"><i class="bi bi-pencil"></i></button>
-                        </form>
-                        <!-- <button class="btn-primary" id="btn-edit" data-bs-toggle="modal" data-bs-target="#editBookForm"><i class="bi bi-pencil"></i></button> -->
+                        <button class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#book'+book.id"><i class="bi bi-pencil"></i></button>
                     </td>
-                </tr>
+
+                
+            </tr>
+            
             </template>
         </tbody>
     </table>
@@ -72,6 +77,9 @@ let book = useBookStore()
 </div>
 
 </div>
+
+    <EditBook />
+ 
 
 </template>
 
