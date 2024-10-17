@@ -22,18 +22,23 @@ import { defineStore } from 'pinia'
    actions: {
     addFormat() {
       this.formats.push(this.newFormat);
+      this.newFormat = ''
     },
     addGender() {
       this.genders.push(this.newGender);
+      this.newGender = ''
     },
     addCountry() {
       this.countries.push(this.newCountry);
+      this.newCountry = ''
     },
     addAge() {
       this.ages.push(this.newAge);
+      this.newAge = ''
     },
     addGenre() {
       this.genres.push(this.newGenre);
+      this.newGenre = ''
     }
    }
  })

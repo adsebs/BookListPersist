@@ -1,2 +1,53 @@
 @import './base.css';
 
+body {
+    background-image: url(what-the-hex.png);
+}
+
+button {
+    border-radius: 0 !important;
+}
+
+.btn-purple {
+    background-color: #765ea6!important;
+    color: white!important;
+    border: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btn-grey {
+    background-color: #999999!important;
+    color: white!important;
+    border: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.card {
+    border-radius: 0;
+}
+
+nav {
+    background-color: #765ea6;
+}
+
+nav h5 {
+    color: white;
+}
+
+.nav-link {
+    color: #f2edfc;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link:active, .nav-link:visited {
+    color: #f2edfc;
+}

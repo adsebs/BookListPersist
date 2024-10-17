@@ -52,8 +52,10 @@ let book = useBookStore();
                     <input v-model="book.newDateStar" name="started" class="form-control" type="text">
                 </div>
                 <div class="col-1">
-                    <label class="form-label" for="collection">Collection &nbsp</label>
-                    <input v-model="book.newCollection" name="collection" class="form-control form-check-input" type="checkbox">
+                    <label class="form-label form-checkbox-label" for="collection">Collection &nbsp
+                        <input v-model="book.newCollection" name="collection" class="form-control form-checkbox" type="checkbox">
+                    </label>
+                    
                 </div>
                 <div class="col">
                     <label class="form-label" for="format">Format</label>
@@ -115,7 +117,7 @@ let book = useBookStore();
                 
             </div>
 
-            <button class="btn btn-primary" type="submit">Add Book</button>
+            <button class="btn-purple" type="submit">Add Book</button>
 
         </form>
 

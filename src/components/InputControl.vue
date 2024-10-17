@@ -10,21 +10,20 @@ let input = useInputStore()
 <template>
 
 <div class="row">
-    <template v-for="type in input.inputs">
-        <div v-if="type.type != 'Statuses'" class="col-4">
+        <div class="col-4">
             <div class="card">
                     <div class="card-title">
-                        <h4>{{ type.type }}</h4>
+                        <h5>Formats</h5>
                     </div>
                     <div class="card-body">
                         <ul>
-                            <li v-for="option in type.options">
-                                {{ option }}
+                            <li v-for="format in input.formats">
+                                {{ format }}
                             </li>
                             <li>
-                                <form @submit.prevent="input.addFormat">
+                                <form ref="submitFormat" @submit.prevent="input.addFormat">
                                     <input v-model="input.newFormat" type="text">
-                                    <button class="btn btn-primary btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
+                                    <button class="btn-purple btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
                                 </form>
                             </li>
                         </ul>
@@ -34,7 +33,7 @@ let input = useInputStore()
         <div class="col-sm-4">
             <div class="card">
                     <div class="card-title">
-                        <h4>Genders</h4>
+                        <h5>Genders</h5>
                     </div>
                     <div class="card-body">
                         <ul>
@@ -44,7 +43,7 @@ let input = useInputStore()
                             <li>
                                 <form @submit.prevent="input.addGender">
                                     <input v-model="input.newGender" type="text">
-                                    <button class="btn btn-primary btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
+                                    <button class="btn-purple btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
                                 </form>
                             </li>
                         </ul>
@@ -54,7 +53,7 @@ let input = useInputStore()
         <div class="col-sm-4">
             <div class="card">
                     <div class="card-title">
-                        Countries
+                        <h5>Countries</h5>
                     </div>
                     <div class="card-body">
                         <ul>
@@ -64,21 +63,19 @@ let input = useInputStore()
                             <li>
                                 <form @submit.prevent="input.addCountry">
                                     <input v-model="input.newCountry" type="text">
-                                    <button class="btn btn-primary btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
+                                    <button class="btn-purple btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
                                 </form>
                             </li>
                         </ul>
                     </div>
                 </div>
         </div>
-
     </div>
     <div class="row">
-
         <div class="col-sm-4">
             <div class="card">
                     <div class="card-title">
-                        Age Ranges
+                        <h5>Age Ranges</h5>
                     </div>
                     <div class="card-body">
                         <ul>
@@ -88,7 +85,7 @@ let input = useInputStore()
                             <li>
                                 <form @submit.prevent="input.addAge">
                                     <input v-model="input.newAge" type="text">
-                                    <button class="btn btn-primary btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
+                                    <button class="btn-purple btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
                                 </form>
                             </li>
                         </ul>
@@ -98,7 +95,7 @@ let input = useInputStore()
         <div class="col-sm-4">
             <div class="card">
                     <div class="card-title">
-                        Genres
+                        <h5>Genres</h5>
                     </div>
                     <div class="card-body">
                         <ul>
@@ -108,7 +105,7 @@ let input = useInputStore()
                             <li>
                                 <form @submit.prevent="input.addGenre">
                                     <input v-model="input.newGenre" type="text">
-                                    <button class="btn btn-primary btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
+                                    <button class="btn-purple btn-add-input" type="submit"><i class="bi bi-plus-square"></i></button>
                                 </form>
                             </li>
                         </ul>
@@ -122,10 +119,6 @@ let input = useInputStore()
     </div>
 
     
-    
-    
-    
-    
 
 </template>
 
@@ -134,6 +127,10 @@ let input = useInputStore()
     .card-title {
         padding-top: 4px;
         padding-left: 10px;
+        background-color: #f2edfc;
+        border: 2px solid #765ea6;
+        border-radius: 0 !important;
+        margin-bottom: 0;
     }
 
     .card {
@@ -143,7 +140,12 @@ let input = useInputStore()
     }
 
     .card-body {
-        padding-top: 0;
+        padding-top: 8px;
+        border-left: 2px solid #765ea6;
+        border-bottom: 2px solid #765ea6;
+        border-right: 2px solid #765ea6;
+        background-color: white;
+        padding-bottom: 1px;
     }
 
     li {
@@ -151,13 +153,10 @@ let input = useInputStore()
     }
 
     .btn-add-input {
-        margin-left: 4px;
-        font-size: 12pt;
+        font-size: 13pt;
         padding-top: 2px;
-        padding-bottom: 2px;
-        padding-left: 5px;
-        padding-right: 5px;
-        border-radius: 0;
+        margin-left: 4px;
+        padding-bottom: 3px;
     }
 
 </style>

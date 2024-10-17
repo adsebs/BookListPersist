@@ -20,15 +20,15 @@ let chosenbook = "default title"
 
 <div id="accordion">
 
-<div v-for="item in book.tblCols" class="card">
-  <div class="card-header">
+<div v-for="item in book.tblCols" class="card accordion-item">
+  <div class="card-header accordion-header">
     <a class="btn" data-bs-toggle="collapse" :href="'#'+item.status">
         {{ item.title }}
     </a>
   </div>
   <div :id="item.status" class="collapse" data-bs-parent="#accordion">
-    <div class="card-body">
-        <table class="table">
+    <div class="card-body accordion-body">
+        <table class="table table-striped">
         <thead>
             <tr>
                 <th v-for="heading in item.headings">
@@ -39,8 +39,7 @@ let chosenbook = "default title"
         </thead>
         <tbody>
             <template v-for="book in book.books" :key=book.id>
-
-
+                <template v-if="book.active == true">
                 <tr  v-if="book.status == item.status">
                     <td>{{ book.title }}</td>
                     <td>{{ book.author }}</td>
@@ -53,7 +52,10 @@ let chosenbook = "default title"
                     <td>{{ book.publYear }}</td>
                     <td>{{ book.publisher }}</td>
                     <td>
-                        <input class="form-check-input" type="checkbox" v-model="book.collection" disabled>
+                        <label class="form-checkbox-label">
+                            <input class="form-checkbox" type="checkbox" v-model="book.collection" disabled>     
+                        </label>
+                        
                     </td>
                     <template v-if="item.status != 'tbr'">
                         <td >{{ book.dateStar }}</td>
@@ -65,12 +67,12 @@ let chosenbook = "default title"
                     </template>
 
                     <td>
-                        <button class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#book'+book.id"><i class="bi bi-pencil"></i></button>
+                        <button class="btn-purple btn-edit" data-bs-toggle="modal" :data-bs-target="'#book'+book.id"><i class="bi bi-pencil"></i></button>
                     </td>
 
                 
             </tr>
-            
+            </template>
             </template>
         </tbody>
     </table>
@@ -101,19 +103,29 @@ let chosenbook = "default title"
         max-width: 5%;
     }
 
-    button {
-        margin-bottom: 10px;
-        border-radius: 0px!important;
-        font-size: 13.5pt!important;
-    }
-
     #btn-edit {
+        margin-bottom: 10px;
+        font-size: 13.5pt!important;
         font-size: 12pt;
         padding-top: 2px;
-        padding-bottom: 2px;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin: 0;
+    }
+
+    .accordion-header {
+        background-color: #f2edfc;
+        border: 2px solid #765ea6;
+        border-radius: 0 !important;
+    }
+
+    .accordion-body {
+        border-left: 2px solid #765ea6;
+        border-bottom: 2px solid #765ea6;
+        border-right: 2px solid #765ea6;
+        background-color: white;
+    }
+
+    .accordion-item {
+        margin-bottom: 4px;
+        margin-top: 6px;
     }
 
 </style>

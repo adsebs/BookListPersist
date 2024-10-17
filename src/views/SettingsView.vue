@@ -8,8 +8,7 @@ import InputControl from '../components/InputControl.vue';
 
     <div class="container content">
 
-        <p>Settings view!</p>
-        <InputControl/>
+        <InputControl />
 
     </div>
     

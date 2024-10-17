@@ -13,7 +13,7 @@ let counter = useCounterStore()
 
     <div class="wrapper">
 
-      <nav class="navbar navbar-expand-sm bg-light">
+      <nav class="navbar navbar-expand-sm">
 
         <div class="container-fluid">
           <!-- Links -->
